@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anargul Essenaliyeva | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a2e0a1d06d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 class="name">Anargul Essenaliyeva</h1>
+      <p class="tagline">Educator • Entrepreneur • Technologist</p>
+      <ul class="contact">
+        <li><i class="fas fa-envelope"></i> <a href="mailto:aessenaliyeva@alumni.nu.edu.kz">aessenaliyeva@alumni.nu.edu.kz</a></li>
+        <li><i class="fas fa-phone"></i> +7 708 148 6845</li>
+        <li><i class="fas fa-globe"></i> <a href="mailto:anargul.essenaliyeva.19@alumni.ucl.ac.uk">anargul.essenaliyeva.19@alumni.ucl.ac.uk</a></li>
+      </ul>
+      <a href="#about" class="btn-primary">Explore My Work ↓</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="section fade-in">
+    <h2>About Me</h2>
+    <p>
+      I am a lifelong learner passionate about technology, education, and empowering women and youth through innovation.
+      Founder and director of <strong>Invest in Kids</strong>, I design programs in English, coding, and AI that inspire
+      future creators to build a better world.
+    </p>
+  </section>
+
+  <!-- Professional Summary -->
+  <section class="section fade-in">
+    <h2>Professional Summary</h2>
+    <p>
+      A dedicated professional with extensive experience in education, project management, and community development.
+      Proven expertise in fostering entrepreneurship, supporting women-led initiatives, and empowering social enterprises.
+      Skilled in capacity building, curriculum design, and developing innovative programs that drive economic growth.
+    </p>
+  </section>
+
+  <!-- Education -->
+  <section class="section fade-in">
+    <h2>Education</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>University College London</h3>
+        <p>MA in Library and Information Studies (2020)</p>
+      </div>
+      <div class="card">
+        <h3>Nazarbayev University</h3>
+        <p>MSc in Educational Leadership: Higher Education (2019)</p>
+      </div>
+      <div class="card">
+        <h3>Kyrgyzstan State University</h3>
+        <p>Expert Diploma in Economics (2010)</p>
+      </div>
+      <div class="card">
+        <h3>Kuwait University in Kyrgyzstan</h3>
+        <p>BA in Arabic Philology & Translation (Distinction, 2005)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section fade-in">
+    <h2>Key Skills</h2>
+    <ul class="skills">
+      <li>🚀 Entrepreneurial Development: Project Management, Mentorship, Program Creation</li>
+      <li>💡 Social Entrepreneurship: Innovation & Community Impact</li>
+      <li>🎓 Capacity Building: Designing Inclusive Training Programs</li>
+      <li>🌍 Languages: Kazakh, Russian, Kyrgyz, English, Classical Arabic</li>
+      <li>💻 Technology: SPSS, Tableau, Python, R, OpenRefine, Google Workspace</li>
+    </ul>
+  </section>
+
+  <!-- Experience -->
+  <section class="section fade-in">
+    <h2>Employment Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Director & Founder – Invest in Kids</h3>
+        <span class="date">2021–Present | Astana, Kazakhstan</span>
+        <p>Developed an educational institution offering English, coding, and AI classes. Partnered with KAZUTB to integrate AI in English education.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Simultaneous Translator – Ministry of External Affairs</h3>
+        <span class="date">2021–Present</span>
+        <p>Provided multilingual translation (Kyrgyz, Kazakh, English, Russian) for diplomatic events.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Manager for Grants – Nazarbayev University</h3>
+        <span class="date">2024</span>
+        <p>Streamlined grant documentation and supported academic project development.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Medical Librarian & Educator – NU School of Medicine</h3>
+        <span class="date">2017–2019</span>
+        <p>Led research workshops and student wellness programs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section class="section fade-in">
+    <h2>Publications</h2>
+    <ul class="publications">
+      <li><strong>“Health Information-Seeking Behavior of Twitter Users During COVID-19”</strong> — IFLA, 2021</li>
+      <li><strong>“Subject Headings in Western Libraries”</strong> — Eurasian Higher Education Leaders Forum, 2015</li>
+    </ul>
+  </section>
+
+  <!-- References -->
+  <section class="section fade-in">
+    <h2>References</h2>
+    <ul class="references">
+      <li><i class="fas fa-user"></i> Venera Niyazbayeva – venera.niyazbayeva@nu.edu.kz</li>
+      <li><i class="fas fa-user"></i> Dr. Nesta Frederick – f.nesta@ucl.ac.uk</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Anargul Essenaliyeva | Built with ❤️ using HTML & CSS</p>
+  </footer>
+
+  <script>
+    // Smooth scroll + fade-in animation
+    const sections = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    });
+    sections.forEach(sec => observer.observe(sec));
+  </script>
+</body>
+</html>
