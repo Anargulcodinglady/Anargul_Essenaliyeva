@@ -4,24 +4,184 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anargul Essenaliyeva | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Font + Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a2e0a1d06d.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222;
+      --accent: linear-gradient(135deg, #4facfe, #00f2fe);
+      --card-bg: #f9f9f9;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #f1f1f1;
+      --card-bg: #1e1e1e;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.4s, color 0.4s;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 4px solid white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .btn-primary {
+      background: white;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: #333;
+      color: white;
+    }
+
+    .section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    /* Social Icons */
+    .social-icons {
+      margin: 1rem 0;
+    }
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      width: 45px;
+      height: 45px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+    .theme-toggle:hover {
+      opacity: 0.9;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 50px 20px;
+        min-height: auto;
+      }
+      .section {
+        padding: 50px 15px;
+      }
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--accent);
+      color: white;
+    }
+  </style>
 </head>
+
 <body>
-  <!-- Hero Section -->
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Hero -->
   <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 class="name">Anargul Essenaliyeva</h1>
-      <p class="tagline">Educator • Entrepreneur • Technologist</p>
-      <ul class="contact">
-        <li><i class="fas fa-envelope"></i> <a href="mailto:aessenaliyeva@alumni.nu.edu.kz">aessenaliyeva@alumni.nu.edu.kz</a></li>
-        <li><i class="fas fa-phone"></i> +7 708 148 6845</li>
-        <li><i class="fas fa-globe"></i> <a href="mailto:anargul.essenaliyeva.19@alumni.ucl.ac.uk">anargul.essenaliyeva.19@alumni.ucl.ac.uk</a></li>
-      </ul>
-      <a href="#about" class="btn-primary">Explore My Work ↓</a>
+    <img src="profile.jpg" alt="Anargul Essenaliyeva" class="profile-pic" />
+    <h1 class="name">Anargul Essenaliyeva</h1>
+    <p class="tagline">Educator • Entrepreneur • Technologist</p>
+
+    <ul class="contact" style="list-style:none;padding:0;">
+      <li><i class="fas fa-envelope"></i> <a style="color:white;" href="mailto:aessenaliyeva@alumni.nu.edu.kz">aessenaliyeva@alumni.nu.edu.kz</a></li>
+      <li><i class="fas fa-phone"></i> +7 708 148 6845</li>
+      <li><i class="fas fa-globe"></i> <a style="color:white;" href="mailto:anargul.essenaliyeva.19@alumni.ucl.ac.uk">anargul.essenaliyeva.19@alumni.ucl.ac.uk</a></li>
+    </ul>
+
+    <div class="social-icons">
+      <a href="https://github.com/anargul-essenaliyeva" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/anargul-essenaliyeva" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/anargul_essenaliyeva" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/anargul.essenaliyeva" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
+
+    <a href="#about" class="btn-primary">Explore My Work ↓</a>
   </header>
 
   <!-- About -->
@@ -34,7 +194,6 @@
     </p>
   </section>
 
-  <!-- Professional Summary -->
   <section class="section fade-in">
     <h2>Professional Summary</h2>
     <p>
@@ -44,33 +203,19 @@
     </p>
   </section>
 
-  <!-- Education -->
   <section class="section fade-in">
     <h2>Education</h2>
     <div class="cards">
-      <div class="card">
-        <h3>University College London</h3>
-        <p>MA in Library and Information Studies (2020)</p>
-      </div>
-      <div class="card">
-        <h3>Nazarbayev University</h3>
-        <p>MSc in Educational Leadership: Higher Education (2019)</p>
-      </div>
-      <div class="card">
-        <h3>Kyrgyzstan State University</h3>
-        <p>Expert Diploma in Economics (2010)</p>
-      </div>
-      <div class="card">
-        <h3>Kuwait University in Kyrgyzstan</h3>
-        <p>BA in Arabic Philology & Translation (Distinction, 2005)</p>
-      </div>
+      <div class="card"><h3>University College London</h3><p>MA in Library and Information Studies (2020)</p></div>
+      <div class="card"><h3>Nazarbayev University</h3><p>MSc in Educational Leadership: Higher Education (2019)</p></div>
+      <div class="card"><h3>Kyrgyzstan State University</h3><p>Expert Diploma in Economics (2010)</p></div>
+      <div class="card"><h3>Kuwait University in Kyrgyzstan</h3><p>BA in Arabic Philology & Translation (Distinction, 2005)</p></div>
     </div>
   </section>
 
-  <!-- Skills -->
   <section class="section fade-in">
     <h2>Key Skills</h2>
-    <ul class="skills">
+    <ul>
       <li>🚀 Entrepreneurial Development: Project Management, Mentorship, Program Creation</li>
       <li>💡 Social Entrepreneurship: Innovation & Community Impact</li>
       <li>🎓 Capacity Building: Designing Inclusive Training Programs</li>
@@ -79,58 +224,36 @@
     </ul>
   </section>
 
-  <!-- Experience -->
   <section class="section fade-in">
     <h2>Employment Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>Director & Founder – Invest in Kids</h3>
-        <span class="date">2021–Present | Astana, Kazakhstan</span>
-        <p>Developed an educational institution offering English, coding, and AI classes. Partnered with KAZUTB to integrate AI in English education.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>Simultaneous Translator – Ministry of External Affairs</h3>
-        <span class="date">2021–Present</span>
-        <p>Provided multilingual translation (Kyrgyz, Kazakh, English, Russian) for diplomatic events.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>Manager for Grants – Nazarbayev University</h3>
-        <span class="date">2024</span>
-        <p>Streamlined grant documentation and supported academic project development.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>Medical Librarian & Educator – NU School of Medicine</h3>
-        <span class="date">2017–2019</span>
-        <p>Led research workshops and student wellness programs.</p>
-      </div>
-    </div>
+    <div class="card"><h3>Director & Founder – Invest in Kids</h3><span>2021–Present | Astana, Kazakhstan</span><p>Developed educational programs in English, coding, and AI.</p></div>
+    <div class="card"><h3>Simultaneous Translator – Ministry of External Affairs</h3><span>2021–Present</span><p>Multilingual translation for diplomatic events.</p></div>
+    <div class="card"><h3>Manager for Grants – Nazarbayev University</h3><span>2024</span><p>Streamlined grant documentation and academic project support.</p></div>
+    <div class="card"><h3>Medical Librarian – NU School of Medicine</h3><span>2017–2019</span><p>Led research and wellness programs.</p></div>
   </section>
 
-  <!-- Publications -->
   <section class="section fade-in">
     <h2>Publications</h2>
-    <ul class="publications">
+    <ul>
       <li><strong>“Health Information-Seeking Behavior of Twitter Users During COVID-19”</strong> — IFLA, 2021</li>
       <li><strong>“Subject Headings in Western Libraries”</strong> — Eurasian Higher Education Leaders Forum, 2015</li>
     </ul>
   </section>
 
-  <!-- References -->
   <section class="section fade-in">
     <h2>References</h2>
-    <ul class="references">
+    <ul>
       <li><i class="fas fa-user"></i> Venera Niyazbayeva – venera.niyazbayeva@nu.edu.kz</li>
       <li><i class="fas fa-user"></i> Dr. Nesta Frederick – f.nesta@ucl.ac.uk</li>
     </ul>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 Anargul Essenaliyeva | Built with ❤️ using HTML & CSS</p>
   </footer>
 
   <script>
-    // Smooth scroll + fade-in animation
+    // Fade-in animation
     const sections = document.querySelectorAll(".fade-in");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -138,6 +261,16 @@
       });
     });
     sections.forEach(sec => observer.observe(sec));
+
+    // Theme toggle
+    const toggleBtn = document.getElementById("themeToggle");
+    const body = document.body;
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      const icon = toggleBtn.querySelector("i");
+      icon.classList.toggle("fa-moon");
+      icon.classList.toggle("fa-sun");
+    });
   </script>
 </body>
 </html>
