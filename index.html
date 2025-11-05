@@ -3,273 +3,270 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anargul Essenaliyeva | Portfolio</title>
-
-  <!-- Google Font + Icons -->
+  <title>Anargul Essenaliyeva | Invest in Kids School</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a2e0a1d06d.js" crossorigin="anonymous"></script>
-
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #222;
-      --accent: linear-gradient(135deg, #4facfe, #00f2fe);
-      --card-bg: #f9f9f9;
+      --bg: #0a0e0c;
+      --accent: #00695c;
+      --text: #e6f0eb;
+      --card-bg: #111512;
+      --hover: #00967d;
     }
-
-    body.dark {
-      --bg: #121212;
-      --text: #f1f1f1;
-      --card-bg: #1e1e1e;
+    body.light {
+      --bg: #f8faf9;
+      --text: #111;
+      --card-bg: #fff;
+      --accent: #00897b;
+      --hover: #004d40;
     }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
       background: var(--bg);
       color: var(--text);
-      transition: background 0.4s, color 0.4s;
+      line-height: 1.6;
+      transition: all 0.4s ease;
     }
+    a { color: var(--accent); text-decoration: none; transition: 0.3s; }
+    a:hover { color: var(--hover); }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      background: var(--accent);
+    header.hero {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       text-align: center;
-      color: white;
-      overflow: hidden;
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--bg) 40%, var(--accent) 100%);
+      padding: 20px;
     }
-
-    .profile-pic {
-      width: 150px;
-      height: 150px;
+    .hero img {
+      width: 160px; height: 160px;
       border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 4px solid white;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 20px rgba(0, 255, 150, 0.2);
+      margin-bottom: 1.5rem;
     }
-
-    .btn-primary {
-      background: white;
-      color: #333;
-      padding: 10px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
+    .hero h1 { font-size: 2.2rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .hero p { color: #c2d5cc; font-size: 1.1rem; margin-bottom: 1.5rem; }
+    .hero .social-icons a {
+      font-size: 1.6rem;
+      color: var(--text);
+      margin: 0 10px;
+      transition: 0.3s;
     }
-    .btn-primary:hover {
-      background: #333;
+    .hero .social-icons a:hover { color: var(--accent); }
+    .btn-main {
+      background: var(--accent);
       color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: 0.3s;
     }
+    .btn-main:hover { background: var(--hover); }
 
-    .section {
-      padding: 80px 20px;
+    section {
       max-width: 900px;
-      margin: auto;
+      margin: 80px auto;
+      padding: 0 20px;
     }
-
-    /* Fade-in animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Cards */
-    .cards {
-      display: grid;
-      gap: 1rem;
+    section h2 {
+      color: var(--accent);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
     }
     .card {
       background: var(--card-bg);
+      border-radius: 10px;
       padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+    .card:hover { transform: translateY(-3px); }
+    ul.skills, ul.publications, ul.references { list-style: none; padding: 0; }
+    ul.skills li, ul.publications li, ul.references li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Pricing Section */
+    .pricing-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .pricing-card {
+      background: var(--card-bg);
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: 0.3s;
     }
-
-    /* Social Icons */
-    .social-icons {
-      margin: 1rem 0;
-    }
-    .social-icons a {
+    .pricing-card:hover { transform: translateY(-5px); }
+    .pricing-card h3 { color: var(--accent); margin-bottom: 10px; }
+    .price { font-size: 1.8rem; font-weight: 600; margin: 10px 0; color: var(--hover); }
+    .pricing-card p { font-size: 0.95rem; margin-bottom: 15px; }
+    .btn-join {
+      background: var(--accent);
       color: white;
-      font-size: 1.5rem;
-      margin: 0 10px;
-      transition: transform 0.3s ease;
+      border-radius: 30px;
+      padding: 10px 25px;
+      display: inline-block;
+      transition: 0.3s;
+      font-weight: 600;
     }
-    .social-icons a:hover {
-      transform: scale(1.2);
-    }
+    .btn-join:hover { background: var(--hover); }
 
-    /* Theme toggle */
+    footer {
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
     .theme-toggle {
       position: fixed;
-      top: 20px;
-      right: 20px;
+      top: 20px; right: 20px;
+      width: 45px; height: 45px;
+      border: none; border-radius: 50%;
       background: var(--accent);
-      border: none;
-      border-radius: 50%;
       color: white;
-      width: 45px;
-      height: 45px;
       font-size: 1.2rem;
       cursor: pointer;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       transition: background 0.3s ease;
-      z-index: 10;
+      z-index: 1000;
     }
-    .theme-toggle:hover {
-      opacity: 0.9;
-    }
+    .theme-toggle:hover { background: var(--hover); }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      .hero {
-        padding: 50px 20px;
-        min-height: auto;
-      }
-      .section {
-        padding: 50px 15px;
-      }
-      .profile-pic {
-        width: 120px;
-        height: 120px;
-      }
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: var(--accent);
-      color: white;
+      .hero h1 { font-size: 1.8rem; }
+      .hero img { width: 130px; height: 130px; }
+      section { margin: 60px 0; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
-    <i class="fas fa-moon"></i>
-  </button>
+  <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
 
-  <!-- Hero -->
   <header class="hero">
-    <img src="profile.jpg" alt="Anargul Essenaliyeva" class="profile-pic" />
-    <h1 class="name">Anargul Essenaliyeva</h1>
-    <p class="tagline">Educator • Entrepreneur • Technologist</p>
-
-    <ul class="contact" style="list-style:none;padding:0;">
-      <li><i class="fas fa-envelope"></i> <a style="color:white;" href="mailto:aessenaliyeva@alumni.nu.edu.kz">aessenaliyeva@alumni.nu.edu.kz</a></li>
-      <li><i class="fas fa-phone"></i> +7 708 148 6845</li>
-      <li><i class="fas fa-globe"></i> <a style="color:white;" href="mailto:anargul.essenaliyeva.19@alumni.ucl.ac.uk">anargul.essenaliyeva.19@alumni.ucl.ac.uk</a></li>
-    </ul>
-
+    <img src="profile.jpg" alt="Anargul Essenaliyeva">
+    <h1>Anargul Essenaliyeva</h1>
+    <p>Founder & Director – Invest in Kids School</p>
     <div class="social-icons">
       <a href="https://github.com/anargul-essenaliyeva" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/in/anargul-essenaliyeva" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://instagram.com/anargul_essenaliyeva" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://facebook.com/anargul.essenaliyeva" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
-
-    <a href="#about" class="btn-primary">Explore My Work ↓</a>
+    <a href="#programs" class="btn-main">Explore Courses ↓</a>
   </header>
 
-  <!-- About -->
-  <section id="about" class="section fade-in">
+  <section id="about">
     <h2>About Me</h2>
-    <p>
-      I am a lifelong learner passionate about technology, education, and empowering women and youth through innovation.
-      Founder and director of <strong>Invest in Kids</strong>, I design programs in English, coding, and AI that inspire
-      future creators to build a better world.
-    </p>
-  </section>
-
-  <section class="section fade-in">
-    <h2>Professional Summary</h2>
-    <p>
-      A dedicated professional with extensive experience in education, project management, and community development.
-      Proven expertise in fostering entrepreneurship, supporting women-led initiatives, and empowering social enterprises.
-      Skilled in capacity building, curriculum design, and developing innovative programs that drive economic growth.
-    </p>
-  </section>
-
-  <section class="section fade-in">
-    <h2>Education</h2>
-    <div class="cards">
-      <div class="card"><h3>University College London</h3><p>MA in Library and Information Studies (2020)</p></div>
-      <div class="card"><h3>Nazarbayev University</h3><p>MSc in Educational Leadership: Higher Education (2019)</p></div>
-      <div class="card"><h3>Kyrgyzstan State University</h3><p>Expert Diploma in Economics (2010)</p></div>
-      <div class="card"><h3>Kuwait University in Kyrgyzstan</h3><p>BA in Arabic Philology & Translation (Distinction, 2005)</p></div>
+    <div class="card">
+      <p>
+        I am an educator and entrepreneur passionate about technology, language, and innovation.  
+        As Founder of <strong>Invest in Kids School</strong> in Astana, I help students and women build digital skills for the future — 
+        from English and coding to Artificial Intelligence and Robotics.  
+      </p>
     </div>
   </section>
 
-  <section class="section fade-in">
-    <h2>Key Skills</h2>
-    <ul>
-      <li>🚀 Entrepreneurial Development: Project Management, Mentorship, Program Creation</li>
-      <li>💡 Social Entrepreneurship: Innovation & Community Impact</li>
-      <li>🎓 Capacity Building: Designing Inclusive Training Programs</li>
-      <li>🌍 Languages: Kazakh, Russian, Kyrgyz, English, Classical Arabic</li>
-      <li>💻 Technology: SPSS, Tableau, Python, R, OpenRefine, Google Workspace</li>
-    </ul>
+  <section id="programs">
+    <h2>Invest in Kids Programs & Pricing</h2>
+    <div class="pricing-container">
+      <div class="pricing-card">
+        <h3>✨ English Courses</h3>
+        <p>General English, IELTS, and Conversational practice.</p>
+        <div class="price">25,000 KZT / 2 weeks</div>
+        <a href="https://wa.me/77081486845?text=I%20want%20to%20join%20the%20English%20course!" target="_blank" class="btn-join">Join Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>💻 Coding for Kids</h3>
+        <p>Learn Python, Scratch, and logic-based problem solving.</p>
+        <div class="price">50,000 KZT / month</div>
+        <a href="https://wa.me/77081486845?text=I%20want%20to%20join%20the%20Coding%20class!" target="_blank" class="btn-join">Join Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>🤖 AI & Robotics</h3>
+        <p>Build real-world robots and AI-powered projects with LEGO EV3, Arduino, and ChatGPT tools.</p>
+        <div class="price">75,000 KZT / month</div>
+        <a href="https://wa.me/77081486845?text=I%20want%20to%20join%20the%20AI%20and%20Robotics%20program!" target="_blank" class="btn-join">Join Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>📘 SAT & IELTS Bootcamps</h3>
+        <p>Exam-focused programs led by expert tutors with proven results.</p>
+        <div class="price">100,000 KZT / month</div>
+        <a href="https://wa.me/77081486845?text=I%20want%20to%20join%20the%20SAT%20or%20IELTS%20bootcamp!" target="_blank" class="btn-join">Join Now</a>
+      </div>
+    </div>
   </section>
 
-  <section class="section fade-in">
-    <h2>Employment Experience</h2>
-    <div class="card"><h3>Director & Founder – Invest in Kids</h3><span>2021–Present | Astana, Kazakhstan</span><p>Developed educational programs in English, coding, and AI.</p></div>
-    <div class="card"><h3>Simultaneous Translator – Ministry of External Affairs</h3><span>2021–Present</span><p>Multilingual translation for diplomatic events.</p></div>
-    <div class="card"><h3>Manager for Grants – Nazarbayev University</h3><span>2024</span><p>Streamlined grant documentation and academic project support.</p></div>
-    <div class="card"><h3>Medical Librarian – NU School of Medicine</h3><span>2017–2019</span><p>Led research and wellness programs.</p></div>
+  <section>
+    <h2>Education</h2>
+    <div class="card"><h3>University College London</h3><p>MA in Library and Information Studies (2020)</p></div>
+    <div class="card"><h3>Nazarbayev University</h3><p>MSc in Educational Leadership: Higher Education (2019)</p></div>
+    <div class="card"><h3>Kyrgyzstan State University</h3><p>Expert Diploma in Economics (2010)</p></div>
   </section>
 
-  <section class="section fade-in">
+  <section>
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Director & Founder – Invest in Kids</h3>
+      <p><em>2021–Present | Astana, Kazakhstan</em></p>
+      <p>Established a modern educational hub offering programs in English, coding, and AI for youth and women.</p>
+    </div>
+    <div class="card">
+      <h3>Translator – Ministry of External Affairs</h3>
+      <p><em>2021–Present</em></p>
+      <p>Provided multilingual interpretation (Kyrgyz, Kazakh, English, Russian) for international summits.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="card">
+      <ul class="skills">
+        <li>Entrepreneurship & Educational Leadership</li>
+        <li>AI Education & Digital Literacy</li>
+        <li>Curriculum Design & Training</li>
+        <li>Public Speaking & Consulting</li>
+        <li>Languages: Kazakh, Russian, English, Arabic, Kyrgyz</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
     <h2>Publications</h2>
-    <ul>
-      <li><strong>“Health Information-Seeking Behavior of Twitter Users During COVID-19”</strong> — IFLA, 2021</li>
-      <li><strong>“Subject Headings in Western Libraries”</strong> — Eurasian Higher Education Leaders Forum, 2015</li>
-    </ul>
-  </section>
-
-  <section class="section fade-in">
-    <h2>References</h2>
-    <ul>
-      <li><i class="fas fa-user"></i> Venera Niyazbayeva – venera.niyazbayeva@nu.edu.kz</li>
-      <li><i class="fas fa-user"></i> Dr. Nesta Frederick – f.nesta@ucl.ac.uk</li>
-    </ul>
+    <div class="card">
+      <ul class="publications">
+        <li><strong>“Health Information-Seeking Behavior of Twitter Users During COVID-19”</strong> — IFLA, 2021</li>
+        <li><strong>“Subject Headings in Western Libraries”</strong> — Eurasian Higher Education Leaders Forum, 2015</li>
+      </ul>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Anargul Essenaliyeva | Built with ❤️ using HTML & CSS</p>
+    © 2025 Invest in Kids School | Founded by Anargul Essenaliyeva 💚
   </footer>
 
   <script>
-    // Fade-in animation
-    const sections = document.querySelectorAll(".fade-in");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    });
-    sections.forEach(sec => observer.observe(sec));
-
-    // Theme toggle
     const toggleBtn = document.getElementById("themeToggle");
     const body = document.body;
     toggleBtn.addEventListener("click", () => {
-      body.classList.toggle("dark");
+      body.classList.toggle("light");
       const icon = toggleBtn.querySelector("i");
-      icon.classList.toggle("fa-moon");
       icon.classList.toggle("fa-sun");
+      icon.classList.toggle("fa-moon");
     });
   </script>
 </body>
